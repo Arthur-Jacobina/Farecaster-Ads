@@ -45,7 +45,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
         previousFrame={previousFrame}
       >
         <FrameImage
-          src="https://nft.storage/images/getting-started.png"
+          src="https://www.pngitem.com/pimgs/m/563-5634790_doge-meme-png-photo-shiba-inu-meme-png.png"
           aspectRatio="1:1"
         ></FrameImage>
         <FrameButton>B</FrameButton>
