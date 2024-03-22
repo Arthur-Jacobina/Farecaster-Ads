@@ -16,6 +16,20 @@ type State = {
   pageIndex: number;
 };
 
+const imgs: {
+  src: string;
+}[] = [
+  {
+    src: "https://www.pngitem.com/pimgs/m/563-5634790_doge-meme-png-photo-shiba-inu-meme-png.png",
+  },
+  {
+    src: "https://i.pinimg.com/originals/d4/33/56/d43356820873342865e5718a7daa2702.png",
+  },
+  {
+    src: "https://i.pinimg.com/originals/29/d2/18/29d21833548643530bb758ad5022c540.png",
+  },
+];
+
 const initialState: State = { pageIndex: 0 };
 
 
@@ -24,7 +38,9 @@ const reducer: FrameReducer<State> = (state, action) => {
   const buttonIndex = action.postBody?.untrustedData.buttonIndex;
 
   return {
-
+    pageIndex: buttonIndex
+    ? (state.pageIndex + (buttonIndex === 2 ? 1 : -1)) % imgs.length
+    : state.pageIndex,
   };
 };  
 
@@ -45,7 +61,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
         previousFrame={previousFrame}
       >
         <FrameImage
-          src="https://www.pngitem.com/pimgs/m/563-5634790_doge-meme-png-photo-shiba-inu-meme-png.png"
+          src={imgs[state.pageIndex]!.src}
           aspectRatio="1:1"
         ></FrameImage>
         <FrameButton>B</FrameButton>
