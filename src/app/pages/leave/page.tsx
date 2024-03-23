@@ -11,6 +11,7 @@ import {
   getPreviousFrame,
   useFramesReducer,
 } from "frames.js/next/server";
+import { getXmtpFrameMessage, isXmtpFrameActionPayload } from "frames.js/xmtp"; 
 import Link from "next/link";
 import { currentURL } from "../../utils";
 import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "../../debug";
@@ -18,6 +19,17 @@ import {
   ThanksPage,
   HelloWorld,
 } from "../../assets/caroussel"
+
+const acceptedProtocols: ClientProtocolId[] = [ 
+    {
+      id: "xmtp", 
+      version: "vNext", 
+    }, 
+    { 
+      id: "farcaster", 
+      version: "vNext", 
+    }, 
+  ]; 
 
 type State = {
   pageIndex: number;
@@ -97,6 +109,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
       pathname="/pages/leave"
       state={state}
       previousFrame={previousFrame}
+      accepts={acceptedProtocols}
     >
       {/* <FrameImage src="https://framesjs.org/og.png" /> */}
       <FrameImage aspectRatio="1.91:1">

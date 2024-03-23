@@ -2847,7 +2847,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xmtp/frames-validator@npm:^0.5.0, @xmtp/frames-validator@npm:^0.5.2":
+"@xmtp/frames-validator@npm:^0.5.2":
   version: 0.5.2
   resolution: "@xmtp/frames-validator@npm:0.5.2"
   dependencies:
@@ -5027,9 +5027,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"frames.js@npm:^0.9.0, frames.js@npm:^0.9.3":
-  version: 0.9.3
-  resolution: "frames.js@npm:0.9.3"
+"frames.js@npm:^0.9.0, frames.js@npm:^0.9.5":
+  version: 0.9.5
+  resolution: "frames.js@npm:0.9.5"
   dependencies:
     "@farcaster/core": "npm:^0.14.7"
     "@vercel/og": "npm:^0.6.2"
@@ -5041,7 +5041,7 @@ __metadata:
     next: ^14.1.0
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 10c0/edfc85750e40e4739effd0d43d0695cf529997db4725623a5d0f3004433c3963cc07f258a1c88edabe8a74e126a4cc7e568e9920e0592575fa02c009ee64d602
+  checksum: 10c0/22ce6dd2217f938a53891cfac7226b6466d2c5b023e8fbbdb5745644018b219dd2b55895d20c58fc4241aadec63b782e02c24092c6c57a8774d705cc4776b39d
   languageName: node
   linkType: hard
 
@@ -5056,7 +5056,7 @@ __metadata:
     "@types/react": "npm:^18.2.0"
     "@types/react-dom": "npm:^18.2.0"
     "@vercel/kv": "npm:^1.0.1"
-    "@xmtp/frames-validator": "npm:^0.5.0"
+    "@xmtp/frames-validator": "npm:^0.5.2"
     autoprefixer: "npm:^10.0.1"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.0"
@@ -5064,7 +5064,7 @@ __metadata:
     dotenv: "npm:^16.4.5"
     eslint: "npm:^8.56.0"
     eslint-config-next: "npm:^14.1.0"
-    frames.js: "npm:^0.9.3"
+    frames.js: "npm:^0.9.5"
     lucide-react: "npm:^0.331.0"
     next: "npm:^14.1.0"
     postcss: "npm:^8"
@@ -7500,9 +7500,9 @@ __metadata:
   linkType: hard
 
 "preact@npm:^10.16.0":
-  version: 10.20.0
-  resolution: "preact@npm:10.20.0"
-  checksum: 10c0/c76e91990ebea73e34d0447801892e593b84acb3e0034a01753f3e11c904039801a4766d54a2e29d89b7ef0621a55cfc2417e85d7213ff8cd72739f495d55e80
+  version: 10.20.1
+  resolution: "preact@npm:10.20.1"
+  checksum: 10c0/3834f00d663c6ab90ddbfd618b7eee8612c5b4c0a2953d283b2b749340b5cc0c9efa91d70583ba6a5f65a641a87257c5bb3b414d9ad1bfb9eab5468c978b19d3
   languageName: node
   linkType: hard
 

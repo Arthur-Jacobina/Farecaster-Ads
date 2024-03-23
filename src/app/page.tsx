@@ -11,6 +11,7 @@ import {
   getPreviousFrame,
   useFramesReducer,
 } from "frames.js/next/server";
+import { getXmtpFrameMessage, isXmtpFrameActionPayload } from "frames.js/xmtp"; 
 import Link from "next/link";
 import { currentURL } from "./utils";
 import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "./debug";
@@ -19,10 +20,31 @@ import {
   HelloWorld,
 } from "./assets/caroussel"
 
+const acceptedProtocols: ClientProtocolId[] = [ 
+  {
+    id: "xmtp", 
+    version: "vNext", 
+  }, 
+  { 
+    id: "farcaster", 
+    version: "vNext", 
+  }, 
+]; 
+
 type State = {
   pageIndex: number;
   active: string;
   total_button_presses: number;
+};
+
+type FrameActionData = {
+  buttonIndex: number;
+  requesterFid: number;
+  castId?: {
+    fid: number;
+    hash: `0x${string}`;
+  };
+  inputText?: string;
 };
 
 const slides: {
@@ -72,13 +94,6 @@ export default async function Home({ searchParams }: NextServerPageProps) {
     previousFrame
   );
 
-  function HandleSubscription() {
-    const ans = frameMessage.inputText;
-    console.log("Users email: %s", ans);
-    return (
-        <div>Subscribe</div>
-    );
-  }
   console.log("info: state is:", state);
   // then, when done, return next frame
   return (
@@ -97,6 +112,7 @@ export default async function Home({ searchParams }: NextServerPageProps) {
       pathname="/"
       state={state}
       previousFrame={previousFrame}
+      accepts= {acceptedProtocols}
     >
       {/* <FrameImage src="https://framesjs.org/og.png" /> */}
       <FrameImage aspectRatio="1.91:1">
@@ -107,9 +123,6 @@ export default async function Home({ searchParams }: NextServerPageProps) {
         Subscribe
       </FrameButton>
       <FrameButton>A</FrameButton>
-      <FrameButton action="link" target={`https://www.google.com`}>
-        External
-      </FrameButton>
     </FrameContainer>
   </div>
    
@@ -131,3 +144,4 @@ export default async function Home({ searchParams }: NextServerPageProps) {
     // </div>
   );
 }
+
