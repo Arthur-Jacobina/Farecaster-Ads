@@ -4,8 +4,13 @@ The concept of advertising dates back to early human history when people started
 In marketing it’s possible to highlight a trend: or one’s adapt to new advertising standards or one is out. In the past 20 years we saw a transition from TV commercials, massive outdoors and other physical media to the digital world. Nowadays, top concerns in advertising are user data handling, user immersion and some other user friendly policies, so in short, now the market is strongly user-centered. 
 
 ### Top players 
-![Market_ShareAds](https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/c8641917-2ddd-4554-892c-cc88f6f79986)
-![Market_ShareAds_Plot](https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/b6a12737-9751-4538-8785-04d6ef915d7b)
+<p align="center">
+<img src ="https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/c8641917-2ddd-4554-892c-cc88f6f79986"/>
+</p>
+<p align="center">
+<img src ="https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/b6a12737-9751-4538-8785-04d6ef915d7b"/>
+</p>
+
 
 
 ### Market Volume: ~ $250,000 (bn)
