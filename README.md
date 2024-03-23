@@ -5,7 +5,8 @@ In marketing it’s possible to highlight a trend: or one’s adapt to new adver
 
 ### Top players 
 ![Market_ShareAds](https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/c8641917-2ddd-4554-892c-cc88f6f79986)
-![Market_ShareAds_Plot](https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/27581fb8-6c22-4dc3-a5a8-506151d32a1b)
+![Market_ShareAds_Plot](https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/b6a12737-9751-4538-8785-04d6ef915d7b)
+
 
 ### Market Volume: ~ $250,000 (bn)
 ### Total Addressable Market (TAM)
