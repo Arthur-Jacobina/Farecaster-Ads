@@ -12,12 +12,12 @@ import {
   useFramesReducer,
 } from "frames.js/next/server";
 import Link from "next/link";
-import { currentURL } from "./utils";
-import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "./debug";
+import { currentURL } from "../../utils";
+import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "../../debug";
 import {
   ThanksPage,
   HelloWorld,
-} from "./assets/caroussel"
+} from "../../assets/caroussel"
 
 type State = {
   pageIndex: number;
@@ -94,40 +94,19 @@ export default async function Home({ searchParams }: NextServerPageProps) {
     </Link>
     <FrameContainer
       postUrl="/frames"
-      pathname="/"
+      pathname="/pages/leave"
       state={state}
       previousFrame={previousFrame}
     >
       {/* <FrameImage src="https://framesjs.org/og.png" /> */}
       <FrameImage aspectRatio="1.91:1">
-        <HelloWorld />
+        <ThanksPage />
       </FrameImage>
-      <FrameInput text="Subscribe" />
-      <FrameButton action = 'post' target = '/pages/leave'>
-        Subscribe
-      </FrameButton>
-      <FrameButton>A</FrameButton>
       <FrameButton action="link" target={`https://www.google.com`}>
-        External
+        Our Twitter
       </FrameButton>
     </FrameContainer>
   </div>
-   
-    //     <FrameImage  
-    //       src={imgs[state.pageIndex]!.src}
-    //       aspectRatio="1:1"
-    //     >
-    //     <FrameInput
-    //       text="sign our newsletter"
 
-    //     />
-    //     <FrameButton>B</FrameButton>
-    //     <FrameButton>A</FrameButton>
-    //     <FrameButton>{state?.active === "1" ? "Active" : "Inactive"}</FrameButton>
-    //     <FrameButton action="link" target={`https://www.youtube.com/`}>
-    //       Visit our site
-    //     </FrameButton>
-    //   </FrameContainer>
-    // </div>
   );
 }

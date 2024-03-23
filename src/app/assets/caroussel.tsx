@@ -4,8 +4,8 @@ export function ThanksPage()
     <div tw="w-full h-full bg-gray-900 text-white justify-center items-center flex flex-col">
         <div tw="flex flex-col items-center">
           <img src="https://www.pngitem.com/pimgs/m/563-5634790_doge-meme-png-photo-shiba-inu-meme-png.png" tw="w-80 h-80 rounded-full"/>
-          <h2 tw="text-15x1 font-bold mb-0 text-blue-300 underline">Subscribe to our Newsletter</h2>
-          <p tw="text-8x1 mb-5">Stay in the edge of advertising!</p>
+          <h2 tw="text-15x1 font-bold mb-0 text-blue-300 underline">Thanks for subscribing</h2>
+          <p tw="text-8x1 mb-5">Stay in the edge of advertising, follow us on Twitter!</p>
     </div>
     </div>
   )

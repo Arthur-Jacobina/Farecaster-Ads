@@ -17,3 +17,4 @@ export function vercelURL() {
     ? `https://${process.env.VERCEL_URL}`
     : undefined;
 }
+
