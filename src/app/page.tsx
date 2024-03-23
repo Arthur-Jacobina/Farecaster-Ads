@@ -4,6 +4,7 @@ import {
   FrameContainer,
   FrameImage,
   FrameReducer,
+  FrameInput,
   NextServerPageProps,
   getPreviousFrame,
   useFramesReducer,
@@ -64,8 +65,12 @@ export default async function Home({ searchParams }: NextServerPageProps) {
           src={imgs[state.pageIndex]!.src}
           aspectRatio="1:1"
         ></FrameImage>
+        <FrameInput text="sign our newsletter" />
         <FrameButton>B</FrameButton>
         <FrameButton>A</FrameButton>
+        <FrameButton action="link" target={`https://www.youtube.com/`}>
+          Visit our site
+        </FrameButton>
       </FrameContainer>
     </div>
   );
