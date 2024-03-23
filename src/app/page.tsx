@@ -93,18 +93,23 @@ export default async function Home({ searchParams }: NextServerPageProps) {
     >
       {/* <FrameImage src="https://framesjs.org/og.png" /> */}
       <FrameImage aspectRatio="1.91:1">
-        <div tw="w-full h-full bg-blue-500 text-white justify-center items-center flex flex-col">
-          {/* <div tw="flex flex-row z-50">
-            {frameMessage?.inputText ? frameMessage.inputText : "Hello world"}
-          </div> */}
-          {frameMessage && (
-            <div tw="w-full h-full flex flex-col">
-              <img src = {imgs[state.pageIndex]!.src}/>
+      <div tw="w-full h-full bg-gray-900 text-white justify-center items-center flex flex-col">
+        <div tw="flex flex-col items-center">
+          <img src="https://www.pngitem.com/pimgs/m/563-5634790_doge-meme-png-photo-shiba-inu-meme-png.png" tw="w-80 h-80 rounded-full"/>
+          <h2 tw="text-15x1 font-bold mb-0 text-blue-300 underline">Subscribe to our Newsletter</h2>
+          <p tw="text-8x1 mb-5">Stay in the edge of advertising!</p>
+          {/* <form tw="w-full max-w-sm">
+            <div tw="flex items-center border-b border-b-2 border-white py-2">
+                <input tw="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Your Email Address" aria-label="Email Address">
+                <button tw="flex-shrink-0 bg-white text-blue-500 hover:text-blue-700 border-white hover:border-blue-500 text-sm border-4 py-1 px-2 rounded" type="button">
+                    Subscribe
+                </button>
             </div>
-          )}
-        </div>
+        </form> */}
+    </div>
+    </div>
       </FrameImage>
-      <FrameInput text="put some text here" />
+      <FrameInput text="Subscribe" />
       <FrameButton>
         {state?.active === "1" ? "Active" : "Inactive"}
       </FrameButton>
