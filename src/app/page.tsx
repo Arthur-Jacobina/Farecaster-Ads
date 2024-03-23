@@ -1,4 +1,6 @@
 import { getTokenUrl } from "frames.js";
+import React, { useState } from "react";
+
 import {
   FrameButton,
   FrameContainer,
@@ -51,7 +53,16 @@ export default async function Home({ searchParams }: NextServerPageProps) {
   const url = currentURL("/");
   const previousFrame = getPreviousFrame<State>(searchParams);
   const [state] = useFramesReducer<State>(reducer, initialState, previousFrame);
+  const [inputValue, setInputValue] = useState("");
 
+  
+  const handleInputKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      // Aqui você pode fazer o que quiser com o valor do input
+      console.log("Valor do input:", inputValue);
+      // Por exemplo, enviar para o servidor, manipular o estado, etc.
+    }
+  };
   // then, when done, return next frame
   return (
     <div>
@@ -65,9 +76,15 @@ export default async function Home({ searchParams }: NextServerPageProps) {
           src={imgs[state.pageIndex]!.src}
           aspectRatio="1:1"
         ></FrameImage>
-        <FrameInput text="sign our newsletter" />
+        <FrameInput
+          text="sign our newsletter"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyPress={handleInputKeyPress}
+        />
         <FrameButton>B</FrameButton>
         <FrameButton>A</FrameButton>
+        <FrameButton>enter</FrameButton>
         <FrameButton action="link" target={`https://www.youtube.com/`}>
           Visit our site
         </FrameButton>
