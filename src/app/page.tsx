@@ -25,17 +25,13 @@ type State = {
   total_button_presses: number;
 };
 
-const imgs: {
-  src: string;
+const slides: {
 }[] = [
   {
-    src: "https://raw.githubusercontent.com/Arthur-Jacobina/Farecaster-Ads/main/frames-imgs/firstFrame.png",
+    src: ThanksPage,
   },
   {
-    src: "https://i.pinimg.com/originals/d4/33/56/d43356820873342865e5718a7daa2702.png",
-  },
-  {
-    src: "https://www.pngitem.com/pimgs/m/563-5634790_doge-meme-png-photo-shiba-inu-meme-png.png",
+    src: HelloWorld,
   },
 ];
 
@@ -47,7 +43,7 @@ const reducer: FrameReducer<State> = (state, action) => {
 
   return {
     pageIndex: buttonIndex
-    ? (state.pageIndex + (buttonIndex === 2 ? 1 : -1)) % imgs.length
+    ? (state.pageIndex + (buttonIndex === 2 ? 1 : -1)) % slides.length
     : state.pageIndex,
     total_button_presses: state.total_button_presses + 1,
     active: action.postBody?.untrustedData.buttonIndex
