@@ -47,6 +47,13 @@ The interaction with these ads injects fun into the advertisement experience, in
 
 In the ever-evolving landscape of digital marketing, the Cost per Lead (CPL) emerges as a pivotal metric for gauging the efficacy of advertising campaigns. For ad platforms, a deep understanding of CPL is fundamental not just for refining strategies but also for maximizing investment returns and delivering cutting-edge solutions tailored to the unique demands of businesses within the same industry. This strategic focus transcends merely boosting the effectiveness of ad campaigns; it fosters robust competition, thereby catalyzing growth and enhancing profitability in the fiercely competitive digital marketplace.
 
-(IMG HERE)
+![FB_ADS_F](https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/f76eaf50-6287-4a28-a94c-370efd7bd8e0)
+![image](https://github.com/Arthur-Jacobina/Farecaster-Ads/assets/129566256/a7a2ee99-0999-472d-b6f6-9a5b4706391d)
+
 
 A study conducted by WordStream in 2023 sheds light on the prevailing CPL trends, revealing that the average CPL for Facebook ads stands at $23.10, in stark contrast to Google Ads, which averages at $53.52. This discrepancy can largely be attributed to Facebook's more engaging and interactive ad formats, offering a more cost-effective avenue for reaching potential leads when compared to Google.
+
+One of the most significant challenges with advertising on social media platforms is the notably high average CPL. Farcaster addresses this issue head-on with its engaging and interactive advertisements designed to captivate users. By significantly enhancing conversion rates, these innovative ads effectively minimize the expenses associated with acquiring each lead, offering a compelling solution to the cost dilemma faced by advertisers.
+
+The estimation of Farcaster's average Cost per Lead (CPL) takes into account the lead rate from Facebook Ads. According to WordStream's 2023 report, about 8.25% of engaged users typically become leads. Given Farcaster's enhanced engagement through its interactive ad features, a higher conversion rate of 15% is anticipated. Data provided by Dune Analytics reveals a user base of 232,174 and revenue of $806,620. At a 15% conversion rate, this results in 34,826 leads, leading to a calculated CPL of $23.16 per lead. This positions Farcaster competitively in the advertising market, highlighting its potential as a valuable platform for advertisers.
+
