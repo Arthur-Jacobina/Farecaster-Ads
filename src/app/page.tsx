@@ -12,13 +12,10 @@ import {
   useFramesReducer,
 } from "frames.js/next/server";
 import { getXmtpFrameMessage, isXmtpFrameActionPayload } from "frames.js/xmtp"; 
-import Link from "next/link";
+import { ClientProtocolId } from "frames.js";
 import { currentURL } from "./utils";
 import { DEFAULT_DEBUGGER_HUB_URL, createDebugUrl } from "./debug";
-import {
-  ThanksPage,
-  HelloWorld,
-} from "./assets/caroussel"
+import React from 'react';
 
 const acceptedProtocols: ClientProtocolId[] = [ 
   {
@@ -47,42 +44,47 @@ type FrameActionData = {
   inputText?: string;
 };
 
-const slides: {
+
+const imgs: {
+  src: string;
 }[] = [
   {
-    src: ThanksPage,
+    src: "https://ipfs.decentralized-content.com/ipfs/bafybeifs7vasy5zbmnpixt7tb6efi35kcrmpoz53d3vg5pwjz52q7fl6pq/cook.png",
   },
   {
-    src: HelloWorld,
+    src: "https://remote-image.decentralized-content.com/image?url=https%3A%2F%2Fipfs.decentralized-content.com%2Fipfs%2Fbafybeiegrnialwu66u3nwzkn4gik4i2x2h4ip7y3w2dlymzlpxb5lrqbom&w=1920&q=75",
+  },
+  {
+    src: "https://remote-image.decentralized-content.com/image?url=https%3A%2F%2Fipfs.decentralized-content.com%2Fipfs%2Fbafybeidc6e5t3qmyckqh4fr2ewrov5asmeuv4djycopvo3ro366nd3bfpu&w=1920&q=75",
   },
 ];
 
 const initialState: State = { pageIndex: 0 , active: "1", total_button_presses: 0 };
 
-//Edit here for changes in button behaviour
+
 const reducer: FrameReducer<State> = (state, action) => {
   const buttonIndex = action.postBody?.untrustedData.buttonIndex;
 
   return {
     pageIndex: buttonIndex
-    ? (state.pageIndex + (buttonIndex === 2 ? 1 : -1)) % slides.length
+    ? (state.pageIndex + (buttonIndex === 2 ?  1 : 1 ? state.pageIndex === 0 ? 0 :  -1 : 0)) % imgs.length
     : state.pageIndex,
     total_button_presses: state.total_button_presses + 1,
-    // active: action.postBody?.untrustedData.buttonIndex
-    //   ? String(action.postBody?.untrustedData.inputText)
-    //   : "Help",
   };
 };  
 
-
-////TO EDIT SLIDES GO TO ./pages/coroussel.tsx ################################################
-// This is a react server component only
 export default async function Home({ searchParams }: NextServerPageProps) {
   const url = currentURL("/");
   const previousFrame = getPreviousFrame<State>(searchParams);
   const frameMessage = await getFrameMessage(previousFrame.postBody, {
     hubHttpUrl: DEFAULT_DEBUGGER_HUB_URL,
   });
+  if ( 
+    previousFrame.postBody
+  ) {
+    console.log();
+  }
+
 
   if (frameMessage && !frameMessage?.isValid) {
     throw new Error("Invalid frame payload");
@@ -95,18 +97,9 @@ export default async function Home({ searchParams }: NextServerPageProps) {
   );
 
   console.log("info: state is:", state);
-  // then, when done, return next frame
+ 
   return (
-    <div className="p-4">
-    frames.js starter kit. The Template Frame is on this page, it&apos;s in
-    the html meta tags (inspect source).{" "}
-    <Link href={createDebugUrl(url)} className="underline">
-      Debug
-    </Link>{" "}
-    or see{" "}
-    <Link href="/examples" className="underline">
-      other examples
-    </Link>
+    <div>
     <FrameContainer
       postUrl="/frames"
       pathname="/"
@@ -114,34 +107,16 @@ export default async function Home({ searchParams }: NextServerPageProps) {
       previousFrame={previousFrame}
       accepts= {acceptedProtocols}
     >
-      {/* <FrameImage src="https://framesjs.org/og.png" /> */}
-      <FrameImage aspectRatio="1.91:1">
-        <HelloWorld />
+      <FrameImage aspectRatio="1.91:1" src={imgs[state.pageIndex]!.src}>
       </FrameImage>
       <FrameInput text="Subscribe" />
+      <FrameButton>←</FrameButton>
+      <FrameButton>→</FrameButton>
       <FrameButton action = 'post' target = '/pages/leave'>
         Subscribe
       </FrameButton>
-      <FrameButton>A</FrameButton>
     </FrameContainer>
   </div>
-   
-    //     <FrameImage  
-    //       src={imgs[state.pageIndex]!.src}
-    //       aspectRatio="1:1"
-    //     >
-    //     <FrameInput
-    //       text="sign our newsletter"
-
-    //     />
-    //     <FrameButton>B</FrameButton>
-    //     <FrameButton>A</FrameButton>
-    //     <FrameButton>{state?.active === "1" ? "Active" : "Inactive"}</FrameButton>
-    //     <FrameButton action="link" target={`https://www.youtube.com/`}>
-    //       Visit our site
-    //     </FrameButton>
-    //   </FrameContainer>
-    // </div>
   );
 }
 
